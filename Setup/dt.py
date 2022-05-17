@@ -43,5 +43,5 @@ print("Features: \n", features)
 dot_data = StringIO()  
 export_graphviz(dtree, out_file=dot_data,feature_names=features,filled=True,rounded=True)
 
-graph, = pydot.graph_from_dot_data(dot_data.getvalue())  
-Image(graph.create_png())
+graph = pydot.graph_from_dot_data(dot_data.getvalue())  
+Image(graph[0].create_png())
